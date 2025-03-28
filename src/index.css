@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  body {
+    @apply antialiased bg-cream text-gray-800;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+
+  /* Ultra-refined typography hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  /* Minimal focus states */
+  *:focus-visible {
+    @apply outline-none ring-1 ring-ingenuity-red/30 ring-offset-1 ring-offset-cream;
+  }
+
+  /* Subtle selection */
+  ::selection {
+    @apply bg-ingenuity-red/10 text-gray-800;
+  }
+
+  /* Optimized text rendering */
+  p, span, div, label, button {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    letter-spacing: 0.01em;
+  }
+
+  /* Refined keyboard shortcut styling */
+  kbd {
+    @apply font-mono text-xs font-medium;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    letter-spacing: 0.02em;
+  }
+
+  /* Cleaner textarea styling */
+  textarea {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+}
+
+/* Prevent text selection globally */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection only for the improved message */
+.selectable-text {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Ultra-minimal prose styles */
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+  @apply bg-gray-100/80 text-gray-700 px-1 py-0.5 rounded border border-gray-200 text-xs font-mono;
+  letter-spacing: 0.02em;
+}
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+  @apply bg-gray-100/80 border border-gray-200 rounded-md p-3;
+}
+
+.prose :where(blockquote):not(:where([class~="not-prose"] *)) {
+  @apply border-l border-ingenuity-red/20 pl-3 italic text-gray-600 text-sm;
+  letter-spacing: 0.01em;
+}
+
+.prose :where(p):not(:where([class~="not-prose"] *)) {
+  @apply text-sm leading-relaxed;
+  letter-spacing: 0.01em;
+}
+
+.prose :where(strong):not(:where([class~="not-prose"] *)) {
+  @apply font-medium text-gray-800;
+}
+
+/* Minimal scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400/70;
+}
